@@ -147,46 +147,89 @@ label {
 
 
 .table-container {
+    display: flex;
+}
+
+/* Sticky and background color for frozen columns */
+.freeze-column {
+    position: sticky;
+    left: 0;
+    background-color: #e3f2fd;
+    z-index: 1;
+    border-right: 1px solid #ddd;
+}
+
+.input-table {
     overflow-x: auto;
+}
+
+.table th, .table td {
+    white-space: nowrap;
+}
+
+.table-container .table {
+    width: 100%;
+    overflow: auto;
+}
+
+
+.table-container {
+    overflow-x: auto;
+    overflow-y: auto; /* Enable vertical scrolling */
     white-space: nowrap;
     max-width: 100%;
     position: relative;
+    overflow: auto;
+    max-height: 530px;
+    
 }
 
 .table {
-    min-width: 1500px; /* Adjust according to your table size */
-    background-color: white; /
-}
-
-.table {
-    border-collapse:separate; /* Change from collapse to separate */
-    border-spacing: 0; /* Ensures no unwanted gaps */
+    min-width: 1500px;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
 .table th,
 .table td {
-    background-color: white; /* Ensures each cell also has a white background */
-    border: 1px solid #000 !important; /* Keeps borders visible */
-    text-align: center; /* Centers text */
+    background-color: white;
+    border: 1px solid #000;
+    border-width: .5px;
+    text-align: center;
+}
+
+.table-header th {
+    background-color: rgb(245, 246, 246);
 }
 
 .freeze-column {
     position: sticky;
     left: 0;
     background-color: white;
-    z-index: 2;
-    border-right: 2px solid #000; /* Ensures the right border remains visible */
-    border-bottom: 1px solid #000; /* Ensures the horizontal borders remain */
-    border-top: 1px solid #000; /* Ensures the top border remains */
-    
+    z-index: 3; /* Ensure sticky columns are on top */
+    border-right: 1px solid #000;
+}
+
+.freeze-row {
+    position: sticky;
+    overflow: auto;
+    max-height: 500px;
 }
 
 /* Adjust positioning for each frozen column */
-.freeze-column:nth-child(1) { left: 0;  min-width: 50px; } /* # */
-.freeze-column:nth-child(2) { left: 50px;  min-width: 150px; } /* Name */
-.freeze-column:nth-child(3) { left: 200px; min-width: 150px; } /* Position */
-.freeze-column:nth-child(4) { left: 350px; min-width: 100px; } /* Emp# */
+.freeze-column:nth-child(1) { left: 0; min-width: 100px; }
+.freeze-column:nth-child(2) { left: 50px; min-width: 150px; }
+.freeze-column:nth-child(3) { left: 200px; min-width: 150px; }
+.freeze-column:nth-child(4) { left: 350px; min-width: 100px; }
 
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Ensure header stays above other content */
+    background-color: #e3f2fd; /* Change this color to match your header */
+    text-align: center;
+  }
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

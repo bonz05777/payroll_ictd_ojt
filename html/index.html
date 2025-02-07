@@ -117,50 +117,69 @@
         </div>
 
         <div class="container p-4 shadow-lg rounded bg-light" style="margin-top: 15px;">
-            <button id="addRowButton" class="btn btn-primary mb-3">Add New Row</button>
+            <div class="d-flex justify-content-start">
+                <button id="addRowButton" class="btn btn-primary mb-3">Add New Row</button>
+            </div>
             <div class="table-container">
                 <table class="table table-bordered" style="width: 100%; table-layout: auto; word-wrap: break-word; word-break: break-word;">
                     <thead>
                         <tr>
-                            <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd ;">#</th>
-                            <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd;">Name</th>
-                            <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd;">Position</th>
-                            <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd;">Emp#</th>
-                            <th colspan="3" style="white-space: normal;">Compensations</th>
-                            <th colspan="16" style="white-space: normal;">Deductions</th>
+                            <th rowspan="4" style="white-space: normal; background-color: #e3f2fd; position: sticky; top: 0; left: 0; z-index: 5; min-width: 50px;">#</th>
+                            <th rowspan="4" style="white-space: normal; background-color: #e3f2fd; position: sticky; top: 0; left: 50px; z-index: 5; min-width: 150px;">Name</th>
+                            <th rowspan="4" style="white-space: normal; background-color: #e3f2fd; position: sticky; top: 0; left: 200px; z-index: 5; min-width: 150px;">Position</th>
+                            <th rowspan="4" style="white-space: normal; background-color: #e3f2fd; position: sticky; top: 0; left: 350px; z-index: 5; min-width: 100px;">Emp#</th>
+                            <th colspan="3" style="white-space: normal; background-color: rgb(215, 215, 215); position: sticky; top: 0; z-index: 4;">Compensations</th>
+                            <th colspan="24" style="white-space: normal; background-color: rgb(215, 215, 215); position: sticky; top: 0; z-index: 4;">Deductions</th>
+                            <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">Gross Gov't Deduction</th>
+                            <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">Gross Personal Deduction</th>
+                            <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">Net TakeHome Pay</th>
+                            <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">1st Half Proceeds</th>
+                            <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">2nd Half Proceeds</th>
                         </tr>
-                        <tr>
-                            <th rowspan="3" style="white-space: normal;">Salaries and Wages - Regular</th>
-                            <th rowspan="3" style="white-space: normal;">PERA</th>
-                            <th rowspan="3" style="white-space: normal;">Gross Amount Earned</th>
-                            <th rowspan="3" style="white-space: normal;">Tardiness/Under Time</th>
-                            <th rowspan="3" style="white-space: normal;">Tax Withheld</th>
-                            <th colspan="8" class="nested-header">Contributions</th>
-                            <th colspan="3" class="nested-heade">Pagibig Loans</th>
-                            <th colspan="4" class="nested-header">Others</th>
+                        <tr class="table-header">
+                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">Salaries and Wages - Regular</th>
+                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">PERA</th>
+                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">Gross Amount Earned</th>
+                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">Tardiness/Under Time</th>
+                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">Tax Withheld</th>
+                            <th colspan="8" style="position: sticky; top: 45px; z-index: 4;">Contributions</th>
+                            <th colspan="3" style="position: sticky; top: 45px; z-index: 4;">Pagibig Loans</th>
+                            <th colspan="3" style="position: sticky; top: 45px; z-index: 4;">Others</th>
+                            <th colspan="7" style="position: sticky; top: 45px; z-index: 4;">GSIS Deductions</th>
+                            <th colspan="1" style="position: sticky; top: 45px; z-index: 4;">Bank Loans</th>
                         </tr>
-                        <tr>
-                            <th colspan="2">PhilHealth</th>
-                            <th colspan="3">PAGIBIG Fund</th>
-                            <th colspan="3">GSIS</th>
-                            <th rowspan="2">MPL</th>
-                            <th rowspan="2">Housing</th>
-                            <th rowspan="2">Lot Purchase/HEAL</th>
-                            <th rowspan="2">GSCGEA Dues</th>
-                            <th rowspan="2">GSCGEA Other Dues</th>
-                            <th rowspan="2">GSC Coop</th>
+        
+                        <tr class="table-header">
+                            <th colspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">PhilHealth</th>
+                            <th colspan="3" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">PAGIBIG Fund</th>
+                            <th colspan="3" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">GSIS</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">MPL</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">Housing</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">Lot Purchase/HEAL</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">GSCGEA Dues</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">GSCGEA Other Dues</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">GSC Coop</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">GSIS MPL</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">CEAP</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">Computer Loan</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">MPL Lite</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">PL (Regular)</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">GSIS-EL</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">GFAL</th>
+                            <th rowspan="2" style="white-space: normal; position: sticky; top: 88px; z-index: 4;">LBP</th>
                         </tr>
-                        <tr>
-                            <th>Personal</th>
-                            <th>Gov't</th>
-                            <th>Personal</th>
-                            <th>Gov't</th>
-                            <th>Pagibig II</th>
-                            <th>Personal</th>
-                            <th>Gov't</th>
-                            <th>ECC</th>
+                        <tr class="table-header">
+                            <th style="position: sticky; top: 131px; z-index: 4;">Personal</th>
+                            <th style="position: sticky; top: 131px; z-index: 4;">Gov't</th>
+                            <th style="position: sticky; top: 131px; z-index: 4;">Personal</th>
+                            <th style="position: sticky; top: 131px; z-index: 4;">Gov't</th>
+                            <th style="position: sticky; top: 131px; z-index: 4;">Pagibig II</th>
+                            <th style="position: sticky; top: 131px; z-index: 4;">Personal</th>
+                            <th style="position: sticky; top: 131px; z-index: 4;">Gov't</th>
+                            <th style="position: sticky; top: 131px; z-index: 4;">ECC</th>
                         </tr>
                     </thead>
+                </div>
               
                 
                 <tbody id="tableBody">
@@ -197,11 +216,26 @@
                         <td><div contenteditable="true" name="gscgea" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
                         <td><div contenteditable="true" name="otherDues" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
                         <td><div contenteditable="true" name="gsccoop" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gsis_mpl" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>    
+                        <td><div contenteditable="true" name="ceap" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="computerLoan" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="mplLite" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pl_regular" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gsis_el" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gfal" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="lbp" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="grossGovtDeduction" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="grossPersonalDeduction" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="netTakeHomePay" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="firstHalfProceeds" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="secondHalfProceeds" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+
+                    
                     </tr>
                 </tbody>
             </table>
         </div>
-    
+    </div>
       </div>
     <div class="grid-container">
       <div class="container">
@@ -375,28 +409,21 @@
 
 
     
-        <script>
-            document.getElementById('addRowButton').addEventListener('click', function() {
-                var tableBody = document.getElementById('tableBody');
-                var newRow = document.createElement('tr');
-                
-                // Create new editable cells for the new row
-                var newCells = '';
-                for (var i = 0; i < 23; i++) {
-                    newCells += `<td><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px;"></div></td>`;
-                }
-                
-                newRow.innerHTML = newCells;
-                tableBody.appendChild(newRow);
+          <script>
+
+            document.getElementById("addRowButton").addEventListener("click", function () {
+            const tableBody = document.getElementById("tableBody");
+    
+            // Create a new row by cloning the first row
+            const firstRow = tableBody.querySelector("tr");
+            const newRow = firstRow.cloneNode(true);
+    
+            // Clear contenteditable content for new row
+            newRow.querySelectorAll("div[contenteditable='true']").forEach(cell => {
+                cell.textContent = "";
             });
-
-
-            document.getElementById('addRowButton').addEventListener('click', function() {
-            var tableBody = document.getElementById('tableBody');
-            var newRow = document.createElement('tr');
-            newRow.innerHTML = '<td class="freeze-column"><div contenteditable="true"></div></td>' +
-                               '<td class="freeze-column"><div contenteditable="true"></div></td>' +
-                               '<td><div contenteditable="true"></div></td>'.repeat(7);
+    
+            // Append the new row to the table body
             tableBody.appendChild(newRow);
         });
 
