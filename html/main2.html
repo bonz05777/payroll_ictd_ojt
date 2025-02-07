@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gensan Payroll System</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/main2.css">
+    <style>
+        /* Simulating frozen columns */
+        .table-container {
+            display: flex;
+        }
+
+        .freeze-column {
+            position: sticky;
+            left: 0;
+            background-color: white;
+            z-index: 1;
+            border-right: 1px solid #ddd;
+        }
+
+        .input-table {
+            overflow-x: auto;
+        }
+
+        .table th, .table td {
+            white-space: nowrap;
+        }
+
+        /* Ensuring smooth scrolling for table rows */
+        .table-container .table {
+            width: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../static/images/logo1.png" alt="Government Logo 1" class="logo">
+            <h1>Gensan LGU Payroll System</h1>
+            <img src="../static/images/logo2.png" alt="Government Logo 2" class="logo2">
+        </div>
+    </header>
+
+    <main>
+       
+        <div class="container p-4 shadow-lg rounded bg-light" style="margin-top: 5px;">
+            
+            <!-- Date Selection Row -->
+            <div class="row mb-3 align-items-center">
+                <div class="col-md-12 d-flex flex-wrap align-items-center gap-2">
+                    <h4 class="mb-0" style="font-size:medium;">For the period of:</h4>
+                    
+                    <label for="month" class="fw-bold mb-0">Month:</label>
+                    <select id="month" name="month" class="form-control w-auto">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+        
+                    <label for="day-start" class="fw-bold mb-0">Day:</label>
+                    <input type="number" id="day-start" name="day-start" min="1" max="31" class="form-control w-auto" placeholder="Start">
+                    <span>to</span>
+                    <input type="number" id="day-end" name="day-end" min="1" max="31" class="form-control w-auto" placeholder="End">
+        
+                    <label for="year" class="fw-bold mb-0">Year:</label>
+                    <input type="number" id="year" name="year" min="1900" max="2100" value="2025" class="form-control w-auto">
+                </div>
+            </div>
+        
+            <!-- First Row (LGU, Responsibility Center, Payroll No.) -->
+            <div class="row">
+                <div class="col-md-4 d-flex align-items-center">
+                    <label class="fw-bold me-2">LGU:</label> 
+                    <input type="text" class="form-control" value="General Santos City, 9500, South Cotabato" disabled>
+                </div>
+                <div class="col-md-4 d-flex align-items-center">
+                    <label class="fw-bold me-2">Responsibility Center:</label>
+                    <input type="text" class="form-control" placeholder="Enter Responsibility Center">
+                </div>
+                <div class="col-md-4 d-flex align-items-center">
+                    <label class="fw-bold me-2">Payroll No.:</label>
+                    <input type="text" class="form-control" placeholder="Enter Payroll No.">
+                </div>
+            </div>
+        
+            <!-- Second Row (Fund, Office, Sheet) -->
+            <div class="row mt-2">
+                <div class="col-md-4 d-flex align-items-center">
+                    <label class="fw-bold me-2">Fund:</label>
+                    <input type="text" class="form-control" placeholder="Enter Fund">
+                </div>
+                <div class="col-md-4 d-flex align-items-center">
+                    <label class="fw-bold me-2">Office:</label>
+                    <input type="text" class="form-control" placeholder="Enter Office">
+                </div>
+                <div class="col-md-4 d-flex align-items-center">
+                    <label class="fw-bold me-2">Sheet:</label>
+                    <input type="text" class="form-control small-input me-1" placeholder="__">
+                    <span>of</span>
+                    <input type="text" class="form-control small-input ms-1" placeholder="__">
+                </div>
+            </div>
+        </div>
+
+        <div class="container p-4 shadow-lg rounded bg-light" style="margin-top: 15px;">
+            <button id="addRowButton" class="btn btn-primary mb-3">Add New Row</button>
+            <div class="table-container">
+                <table class="table table-bordered" style="width: 100%; table-layout: auto; word-wrap: break-word; word-break: break-word;">
+                    <thead>
+                        <tr>
+                            <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd ;">#</th>
+                            <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd;">Name</th>
+                            <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd;">Position</th>
+                            <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd;">Emp#</th>
+                            <th colspan="3" style="white-space: normal; background-color: rgb(215, 215, 215);">Compensations</th>
+                            <th colspan="24" style="white-space: normal; background-color: rgb(215, 215, 215);">Deductions</th>
+                            <th rowspan="4" style="white-space: normal;">Gross Gov't Deduction</th>
+                            <th rowspan="4" style="white-space: normal;">Gross Personal Deduction</th>
+                            <th rowspan="4" style="white-space: normal;">Net TakeHome Pay</th> 
+                            <th rowspan="4" style="white-space: normal;">1st Half Proceeds</th>
+                            <th rowspan="4" style="white-space: normal;">2nd Half Proceeds</th>
+
+                        </tr>
+                        <tr class="table-header">
+                            <th rowspan="3" style="white-space: normal;">Salaries and Wages - Regular</th>
+                            <th rowspan="3" style="white-space: normal;">PERA</th>
+                            <th rowspan="3" style="white-space: normal;">Gross Amount Earned</th>
+                            <th rowspan="3" style="white-space: normal;">Tardiness/Under Time</th>
+                            <th rowspan="3" style="white-space: normal;">Tax Withheld</th>
+                            <th colspan="8" class="nested-header">Contributions</th>
+                            <th colspan="3" class="nested-heade">Pagibig Loans</th>
+                            <th colspan="3" class="nested-header">Others</th>
+                            <th colspan="7" class="nested-header">GSIS Deductions</th>
+                            <th colspan="1" class="nested-header">Bank Loans</th>
+                        </tr>
+                        <tr class="table-header">
+                            <th colspan="2" style="white-space: normal;">PhilHealth</th>
+                            <th colspan="3" style="white-space: normal;">PAGIBIG Fund</th>
+                            <th colspan="3" style="white-space: normal;">GSIS</th>
+                            <th rowspan="2" style="white-space: normal;">MPL</th>
+                            <th rowspan="2" style="white-space: normal;">Housing</th>
+                            <th rowspan="2" style="white-space: normal;">Lot Purchase/HEAL</th>
+                            <th rowspan="2" style="white-space: normal;">GSCGEA Dues</th>
+                            <th rowspan="2" style="white-space: normal;">GSCGEA Other Dues</th>
+                            <th rowspan="2" style="white-space: normal;">GSC Coop</th>
+                            <th rowspan="2" style="white-space: normal;">GSIS MPL</th>
+                            <th rowspan="2" style="white-space: normal;">CEAP</th>
+                            <th rowspan="2" style="white-space: normal;">Computer Loan</th>
+                            <th rowspan="2" style="white-space: normal;">MPL Lite</th>
+                            <th rowspan="2" style="white-space: normal;">PL (Regular)</th>
+                            <th rowspan="2" style="white-space: normal;">GSIS-EL</th>
+                            <th rowspan="2" style="white-space: normal;">GFAL</th>
+                            <th rowspan="2" style="white-space: normal;">LBP</th>
+                        </tr>
+                        <tr class="table-header">
+                            <th>Personal</th>
+                            <th>Gov't</th>
+                            <th>Personal</th>
+                            <th>Gov't</th>
+                            <th>Pagibig II</th>
+                            <th>Personal</th>
+                            <th>Gov't</th>
+                            <th>ECC</th>
+                        </tr>
+                    </thead>
+              
+                
+                <tbody id="tableBody">
+                    <!-- Default Row -->
+                    <tr>
+                        <td class="freeze-column" style="background-color: #e3f2fd;">
+                            <div contenteditable="true" name="rowNumber" style="border: 1px solid #ccc; padding: 5px; min-width: 50px; background-color: white;"></div>
+                        </td>
+                        <td class="freeze-column" style="background-color: #e3f2fd;">
+                            <div contenteditable="true" name="employeeName" style="border: 1px solid #ccc; padding: 5px; min-width: 50px; background-color: white;"></div>
+                        </td>
+                        <td class="freeze-column" style="background-color: #e3f2fd;">
+                            <div contenteditable="true" name="position" style="border: 1px solid #ccc; padding: 5px; min-width: 50px; background-color: white;"></div>
+                        </td>
+                        <td class="freeze-column" style="background-color: #e3f2fd;">
+                            <div contenteditable="true" name="empNumber" style="border: 1px solid #ccc; padding: 5px; min-width: 50px; background-color: white;"></div>
+                        </td>
+                        <td><div contenteditable="true" name="salaryWages" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pera" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="grossAmount" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="tardiness" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="taxWithheld" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="philhealthPersonal" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="philhealthGovt" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pagibigPersonal" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pagibigGovt" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pagibig2" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gsisPersonal" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gsisGovt" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gsisEcc" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pagibig_mpl" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pagibig_housing" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pagibig_lotheal" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gscgea" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="otherDues" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gsccoop" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gsis_mpl" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>    
+                        <td><div contenteditable="true" name="ceap" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="computerLoan" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="mplLite" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="pl_regular" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gsis_el" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="gfal" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="lbp" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="grossGovtDeduction" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="grossPersonalDeduction" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="netTakeHomePay" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="firstHalfProceeds" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+                        <td><div contenteditable="true" name="secondHalfProceeds" style="border: 1px solid #ccc; padding: 5px; min-width: 80px;"></div></td>
+
+                    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    
+        <script>
+
+        document.getElementById("addRowButton").addEventListener("click", function () {
+        const tableBody = document.getElementById("tableBody");
+
+        // Create a new row by cloning the first row
+        const firstRow = tableBody.querySelector("tr");
+        const newRow = firstRow.cloneNode(true);
+
+        // Clear contenteditable content for new row
+        newRow.querySelectorAll("div[contenteditable='true']").forEach(cell => {
+            cell.textContent = "";
+        });
+
+        // Append the new row to the table body
+        tableBody.appendChild(newRow);
+    });
+        
+        </script>
+        
+    </main>
+
+
+    
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Government Payroll System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,219 @@
+/* static/css/base.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #002c5c, #0056b3, #ffffff);
+    color: #fff;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    max-width: 1200px; /* Example max width */
+    margin: 0 auto; /* Center the container */
+}
+
+.logo {
+    max-height: 80px; /* Adjust as needed */
+    margin: 0 1rem; /* Space between logo and text */
+}
+.logo2 {
+    position: absolute;
+    right: 80px; /* Increase this value to move left */
+    height: 150px;
+}
+
+header h1 {
+    margin: 0; /* Remove default margin for h1 */
+    flex-grow: 1; /* Allow header to take up remaining space */
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem;
+}
+
+.content {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+/* Footer Styles */
+footer {
+    background-color: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative; /* For absolute positioning of border image */
+}
+.date-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between elements */
+    flex-wrap: wrap; /* Wrap items if screen is too small */
+}
+
+.date-container h2 {
+    margin: 0; /* Remove default margin */
+}
+.date-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between elements */
+    flex-wrap: wrap; /* Wrap items if needed */
+}
+
+.date-container h3 {
+    margin: 0; /* Remove default margin */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+select, input {
+    padding: 5px;
+    font-size: 12px;
+}
+
+input[type="number"] {
+    width: 70px; /* Set fixed width for number inputs */
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.border-image {
+    width: 100%;
+    position: absolute;
+    margin-top: 30px;
+    top: -20px;
+    left: 0;
+    z-index: 1; /* Ensure border image appears above footer background */
+}
+
+footer p {
+    margin: 0;
+    z-index: 2;
+    position: relative; /* Ensure footer content is above border image */
+}
+
+
+/* Reduce spacing between input and label */
+label {
+    white-space: nowrap; /* Prevent label from breaking */
+}
+
+.small-input {
+    width: 60px; /* Small width for sheet number */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .row .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+.container {
+    max-width: 100%; /* Use full width */
+    width: 98%; /* Slight margin on sides */
+    margin: 0 auto; /* Center the container */
+}
+
+
+.table-container {
+    display: flex;
+}
+
+/* Sticky and background color for frozen columns */
+.freeze-column {
+    position: sticky;
+    left: 0;
+    background-color: #e3f2fd;
+    z-index: 1;
+    border-right: 1px solid #ddd;
+}
+
+.input-table {
+    overflow-x: auto;
+}
+
+.table th, .table td {
+    white-space: nowrap;
+}
+
+.table-container .table {
+    width: 100%;
+    overflow: auto;
+}
+
+
+.table-container {
+    overflow-x: auto;
+    overflow-y: auto; /* Enable vertical scrolling */
+    white-space: nowrap;
+    max-width: 100%;
+    position: relative;
+}
+
+.table {
+    min-width: 1500px;
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th,
+.table td {
+    background-color: white;
+    border: 1px solid #000;
+    border-width: .5px;
+    text-align: center;
+}
+
+.table-header th {
+    background-color: rgb(245, 246, 246);
+}
+
+.freeze-column {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 3; /* Ensure sticky columns are on top */
+    border-right: 1px solid #000;
+}
+
+/* Adjust positioning for each frozen column */
+.freeze-column:nth-child(1) { left: 0; min-width: 100px; }
+.freeze-column:nth-child(2) { left: 50px; min-width: 150px; }
+.freeze-column:nth-child(3) { left: 200px; min-width: 150px; }
+.freeze-column:nth-child(4) { left: 350px; min-width: 100px; }
+

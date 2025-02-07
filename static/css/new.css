@@ -1,0 +1,47 @@
+.certification-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+.cert-box {
+    border: 2px solid #4d6ea1;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+.cert-box h3 {
+    margin: 0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+.cert-box h4{
+    margin: 0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    margin-left: 80px;
+    margin-right: auto;
+    width: 80%;
+}
+.cert-box p {
+    font-size: 12px;
+    margin: 5px 0;
+    font-family: Arial, sans-serif;
+}
+.signature {
+    margin-top: 80px;
+}
+.signature div {
+    width: 70%;
+    margin: 5px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+.date-container {
+    text-align: right;
+    margin-top: 10px;
+    margin-left: 100px;
+}

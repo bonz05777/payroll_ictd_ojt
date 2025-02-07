@@ -1,0 +1,95 @@
+/* Add styles here */
+/* static/css/payroll.css */
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 95%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background-color: white;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+
+}
+th {
+    background-color: #f2f2f2;
+}
+.group-header {
+    background-color: #d9d9d9;
+    font-weight: bold;
+}
+.editable {
+    background-color: #ffffe0;
+    cursor: pointer;
+}
+.table-wrapper {
+    overflow-x: auto; /* Make the table horizontally scrollable */
+    width: 100%; /* Ensure the wrapper takes the full width */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%; /* Table should fit within the wrapper initially */
+    table-layout: auto; /* Or fixed depending on your preference */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap; /* Prevent text from wrapping */
+    
+}
+
+/* Fix the first four columns */
+th:nth-child(1),
+th:nth-child(2),
+th:nth-child(3),
+th:nth-child(4),
+td:nth-child(1),
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4) {
+    position: sticky;
+    left: 0;
+    background-color: white; /* or any color you prefer */
+    z-index: 1;
+}
+th:nth-child(2), td:nth-child(2){
+    left: 49px;
+}
+th:nth-child(3), td:nth-child(3){
+    left: 200px;
+}
+th:nth-child(4), td:nth-child(4){
+    left: 351px;
+}
+th:nth-child(1){
+    left:0px
+}
+
+/* Ensure that the fixed columns are above the scrolling columns */
+tr {
+    z-index: 0;
+}
+
+/* Style for fixed columns in the body */
+.fixed-col {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+}

@@ -1,0 +1,310 @@
+/* static/css/base.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #002c5c, #0056b3, #ffffff);
+    color: #fff;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    max-width: 1200px; /* Example max width */
+    margin: 0 auto; /* Center the container */
+}
+
+.logo {
+    max-height: 80px; /* Adjust as needed */
+    margin: 0 1rem; /* Space between logo and text */
+}
+.logo2 {
+    position: absolute;
+    right: 80px; /* Increase this value to move left */
+    height: 150px;
+}
+
+header h1 {
+    margin: 0; /* Remove default margin for h1 */
+    flex-grow: 1; /* Allow header to take up remaining space */
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem;
+}
+
+.content {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+/* Footer Styles */
+footer {
+    background-color: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+}
+.date-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    flex-wrap: wrap; 
+}
+
+.date-container h2 {
+    margin: 0;
+}
+
+
+.date-container h3 {
+    margin: 0; 
+    white-space: nowrap; 
+}
+
+select, input {
+    padding: 5px;
+    font-size: 12px;
+}
+
+input[type="number"] {
+    width: 70px;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.border-image {
+    width: 100%;
+    position: absolute;
+    margin-top: 30px;
+    top: -20px;
+    left: 0;
+    z-index: 1;
+}
+
+footer p {
+    margin: 0;
+    z-index: 2;
+    position: relative; /* Ensure footer content is above border image */
+}
+
+
+/* Reduce spacing between input and label */
+label {
+    white-space: nowrap; /* Prevent label from breaking */
+}
+
+.small-input {
+    width: 60px; /* Small width for sheet number */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .row .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+.container {
+    max-width: 100%; /* Use full width */
+    width: 98%; /* Slight margin on sides */
+    margin: 0 auto; /* Center the container */
+}
+
+
+
+
+.table-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+    position: relative;
+}
+
+.table {
+    min-width: 1500px; /* Adjust according to your table size */
+    background-color: white; /
+}
+
+.table {
+    border-collapse:separate; /* Change from collapse to separate */
+    border-spacing: 0; /* Ensures no unwanted gaps */
+}
+
+.table th,
+.table td {
+    background-color: white; /* Ensures each cell also has a white background */
+    border: 1px solid #000 !important; /* Keeps borders visible */
+    text-align: center; /* Centers text */
+}
+
+.freeze-column {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+    border-right: 2px solid #000; /* Ensures the right border remains visible */
+    border-bottom: 1px solid #000; /* Ensures the horizontal borders remain */
+    border-top: 1px solid #000; /* Ensures the top border remains */
+    
+}
+
+/* Adjust positioning for each frozen column */
+.freeze-column:nth-child(1) { left: 0;  min-width: 50px; } /* # */
+.freeze-column:nth-child(2) { left: 50px;  min-width: 150px; } /* Name */
+.freeze-column:nth-child(3) { left: 200px; min-width: 150px; } /* Position */
+.freeze-column:nth-child(4) { left: 350px; min-width: 100px; } /* Emp# */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px 0px 40px 17px;
+
+}
+.container {
+    border: 1px solid #dee2e6;
+    padding: 25px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.container:hover {
+    transform: translateY(-5px);
+}
+.header {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.header .box {
+    padding: 8px 15px;
+    font-weight: bold;
+    margin-right: 10px;
+    background-color: #1170b9;
+    color: white;
+    border-radius: 5px;
+}
+.separator {
+    border-top: 3px solid #000;
+    margin: 15px 0;
+}
+.signature-image {
+    display: none;
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    margin: 10px auto;
+    border: 1px solid #dee2e6;
+}
+.signature-line-after {
+border-top: 1px solid #000; 
+width: 70%; 
+margin: 5px auto;
+}
+
+.G-container {
+    width: 100%;
+    max-width: 1400px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left:auto;
+}
+.G-table-title {
+    font-weight: bold;
+    background-color: #1170b9;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #dee2e6;
+    text-align: center;
+    padding: 8px;
+}
+.styled-input {
+border: 1px solid #ccc; 
+border-radius: 5px; 
+padding: 5px; 
+font-size: 14px; 
+margin-right: 30px ;
+margin-left: 20px;
+width: 200px;
+}
+.table-container {
+    position: relative; 
+    margin-bottom: 40px; 
+}
+
+.button-row {
+    width: 100%; 
+    display: flex; 
+    justify-content: left;
+}
+
+.button-row button {
+  background-color: #007bff; 
+  color: white; 
+  padding: 5px 10px; 
+  border: none; 
+  border-radius:5px;
+}
+
+
+.footer-section {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-size: 14px;
+    justify-content: center;
+}
+.footer-section div {
+    font-weight: bold;
+}
