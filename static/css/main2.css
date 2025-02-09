@@ -55,6 +55,7 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 th, td {
     border: 1px solid black;
@@ -187,6 +188,7 @@ label {
     
 }
 
+
 .table {
     min-width: 1500px;
     background-color: white;
@@ -210,7 +212,7 @@ label {
     position: sticky;
     left: 0;
     background-color: white;
-    z-index: 3; /* Ensure sticky columns are on top */
+    z-index: 5; /* Ensure sticky columns are on top */
     border-right: 1px solid #000;
 }
 
@@ -222,9 +224,9 @@ label {
 
 /* Adjust positioning for each frozen column */
 .freeze-column:nth-child(1) { left: 0; min-width: 100px; }
-.freeze-column:nth-child(2) { left: 50px; min-width: 150px; }
-.freeze-column:nth-child(3) { left: 200px; min-width: 150px; }
-.freeze-column:nth-child(4) { left: 350px; min-width: 100px; }
+.freeze-column:nth-child(2) { left: 100px; min-width: 150px; }
+.freeze-column:nth-child(3) { left: 250px; min-width: 150px; }
+.freeze-column:nth-child(4) { left: 400px; min-width: 100px; }
 
 thead th {
     position: sticky;
@@ -233,3 +235,5 @@ thead th {
     background-color: #e3f2fd; /* Change this color to match your header */
     text-align: center;
   }
+
+  

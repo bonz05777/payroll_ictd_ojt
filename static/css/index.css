@@ -219,9 +219,9 @@ label {
 
 /* Adjust positioning for each frozen column */
 .freeze-column:nth-child(1) { left: 0; min-width: 100px; }
-.freeze-column:nth-child(2) { left: 50px; min-width: 150px; }
-.freeze-column:nth-child(3) { left: 200px; min-width: 150px; }
-.freeze-column:nth-child(4) { left: 350px; min-width: 100px; }
+.freeze-column:nth-child(2) { left: 100px; min-width: 150px; }
+.freeze-column:nth-child(3) { left: 250px; min-width: 150px; }
+.freeze-column:nth-child(4) { left: 400px; min-width: 100px; }
 
 thead th {
     position: sticky;
