@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/main2.css">
     
+
 </head>
 <body>
     <header>
@@ -101,8 +102,8 @@
                             <th rowspan="4" class="freeze-column" style="white-space: normal; background-color: #e3f2fd; position: sticky; top: 0; left: 100px; z-index: 5; min-width: 150px;">Name</th>
                             <th rowspan="4" style="white-space: normal; background-color: #e3f2fd; position: sticky; top: 0; left: 250px; z-index: 5; min-width: 150px;">Position</th>
                             <th rowspan="4" style="white-space: normal; background-color: #e3f2fd; position: sticky; top: 0; left: 400px; z-index: 5; min-width: 100px;">Emp#</th>
-                            <th colspan="3" style="white-space: normal; background-color: rgb(215, 215, 215); position: sticky; top: 0; z-index: 4;">Compensations</th>
-                            <th colspan="24" style="white-space: normal; background-color: rgb(215, 215, 215); position: sticky; top: 0; z-index: 4;">Deductions</th>
+                            <th colspan="3" style="white-space: normal; background-color: rgb(243, 255, 178); position: sticky; top: 0; z-index: 4;">Compensations</th>
+                            <th colspan="24" style="white-space: normal; background-color: rgb(243, 255, 178); position: sticky; top: 0; z-index: 4;">Deductions</th>
                             <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">Gross Gov't Deduction</th>
                             <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">Gross Personal Deduction</th>
                             <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">Net TakeHome Pay</th>
@@ -110,11 +111,11 @@
                             <th rowspan="4" style="white-space: normal; position: sticky; top: 0; z-index: 4;">2nd Half Proceeds</th>
                         </tr>
                         <tr class="table-header">
-                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">Salaries and Wages - Regular</th>
-                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">PERA</th>
-                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">Gross Amount Earned</th>
-                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">Tardiness/Under Time</th>
-                            <th rowspan="3" style="white-space: normal; position: sticky; top: 45px; z-index: 4;">Tax Withheld</th>
+                            <th rowspan="3" style="white-space: normal; background-color: rgb(0, 60, 144); color: white; position: sticky; top: 45px; z-index: 4;">Salaries and Wages - Regular</th>
+                            <th rowspan="3" style="white-space: normal; background-color: rgb(0, 60, 144); color: white; position: sticky; top: 45px; z-index: 4;">PERA</th>
+                            <th rowspan="3" style="white-space: normal; background-color: rgb(0, 60, 144); color: white; position: sticky; top: 45px; z-index: 4;">Gross Amount Earned</th>
+                            <th rowspan="3" style="white-space: normal; background-color: rgb(0, 60, 144); color: white; position: sticky; top: 45px; z-index: 4;">Tardiness/Under Time</th>
+                            <th rowspan="3" style="white-space: normal; background-color: rgb(226, 226, 226);background-color: rgb(0, 60, 144); color: white; position: sticky; top: 45px; z-index: 4;">Tax Withheld</th>
                             <th colspan="8" style="position: sticky; top: 45px; z-index: 4;">Contributions</th>
                             <th colspan="3" style="position: sticky; top: 45px; z-index: 4;">Pagibig Loans</th>
                             <th colspan="3" style="position: sticky; top: 45px; z-index: 4;">Others</th>
@@ -205,75 +206,46 @@
 
                     
                     </tr>
+                    
                 </tbody>
 
                 <tfoot>
+                   
                     <tr>
-                        <td class="freeze-column" colspan="4" class="text-end fw-bold"><strong>Page Total:</strong> </td>
-                        <td><input type="text" class="form-control"></td> <!-- Salaries and Wages - Regular -->
-                        <td><input type="text" class="form-control"></td> <!-- PERA -->
-                        <td><input type="text" class="form-control"></td> <!-- Gross Amount Earned -->
-                        <td><input type="text" class="form-control"></td> <!-- Tardiness/Under Time -->
-                        <td><input type="text" class="form-control"></td> <!-- Tax Withheld -->
-                        
-                        <!-- Contributions -->
-                        <td><input type="text" class="form-control"></td> <!-- PhilHealth (1) -->
-                        <td><input type="text" class="form-control"></td> <!-- PhilHealth (2) -->
-                        <td><input type="text" class="form-control"></td> <!-- PAGIBIG Fund (1) -->
-                        <td><input type="text" class="form-control"></td> <!-- PAGIBIG Fund (2) -->
-                        <td><input type="text" class="form-control"></td> <!-- PAGIBIG Fund (3) -->
-                        <td><input type="text" class="form-control"></td> <!-- Others (1) -->
-                        <td><input type="text" class="form-control"></td> <!-- Others (2) -->
-                        <td><input type="text" class="form-control"></td> <!-- Others (3) -->
-                
-                        <!-- GSIS Deductions -->
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                
-                        <td><input type="text" class="form-control"></td> <!-- Bank Loans -->
-                        <td><input type="text" class="form-control"></td> <!-- Gross Gov't Deduction -->
-                        <td><input type="text" class="form-control"></td> <!-- Gross Personal Deduction -->
-                        <td><input type="text" class="form-control"></td> <!-- Net TakeHome Pay -->
-                        <td><input type="text" class="form-control"></td> <!-- 1st Half Proceeds -->
-                        <td><input type="text" class="form-control"></td> <!-- 2nd Half Proceeds -->
+                        <td class="freeze-column" colspan="4" rowspan="2" style="border: 1px solid black; padding: 5px; text-align: center;"><b>Page Total:</b></td>
+                        <td style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">271,949.87</div></td>
+                        <td style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">15,651.82</div></td>
+                        <td rowspan="2" style="vertical-align: top; border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">287,601.69</div></td>
+                        <td style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">0.00</div></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">19,782.51</div></td>
+                        <td colspan="3" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">6,882.66</div></td>
+                        <td style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">2,700.00</div></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">1,600.00</div></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">24,563.18</div></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">32,750.91</div></td>
                     </tr>
                     <tr>
-                        <td class="freeze-column" colspan="4" class="text-end fw-bold"><strong>Grand Total:</strong></td>
-                        <td colspan="2"><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">13,765.30</div></td>
+                        <td colspan="3" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">58,114.09</div></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">12,282.99</div></td>
                     </tr>
+                    <tr>
+                        <td class="freeze-column" colspan="4" rowspan="2" style="border: 1px solid black; padding: 5px; text-align: center;"><b>Grand Total :</b></td>
+                        <td style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">271,949.87</div></td>
+                        <td style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">15,651.82</div></td>
+                        <td colspan="3" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">287,601.69</div></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">0.00</div></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">19,782.51</div></td>
+                        <td colspan="2" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">12,282.99</div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="8" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">58,114.09</div></td>
+                        <td colspan="3" style="border: 1px solid black; padding: 5px;"><div contenteditable="true" style="border: 1px solid #ccc; padding: 5px; min-width: 80px; display: inline-block; word-break: break-word;">2,760.00</div></td>
+                    </tr>
+
+
+
+
                 </tfoot>
             </table>
         </div>
@@ -282,121 +254,121 @@
 
 
     <div class="grid-container">
-      <div class="container">
-          <div class="header">
-              <div class="box">A</div>
-              <div class="text"><strong>CERTIFIED: Services duly rendered as stated</strong></div>
-          </div>
-          <div class="separator"></div>
-          <div class="content">
-            <img class="signature-image" id="signatureA" alt="Signature">
-              <div class="signature-section">
-                  <div>HON. LORELIE G. PACQUIAO</div> 
-                  <div class="signature-line-after"></div>
-                  <div class="signature-line">Signature over Printed Name</div>
-                  <div>Authorized Official</div>
-              </div>
-              <input type="file" class="form-control" accept="image/*" onchange="uploadSignature(event, 'signatureA')">
-              <div class="date-section">
-                  <input type="date" class="form-control">
-                  <div class="date-label">Date</div>
-              </div>
-          </div>
-      </div>
-      
-      <div class="container">
-          <div class="header">
-              <div class="box">B</div>
-              <div class="text"><strong>CERTIFIED: Supporting documents complete and proper</strong></div>
-          </div>
-          <div class="separator"></div>
-          <div class="content">
-              <div class="signature-section">
-                  <div>FLABERT B. VILLASENCIO</div>
-                  <div class="signature-line">Acting CGDH II</div>
-                  <div>Head of Accounting Division/Unit</div>
-              </div>
-              <div class="date-section">
-                  <input type="date" class="form-control">
-                  <div class="date-label">Date</div>
-              </div>
-          </div>
-      </div>
-      
-      <div class="container">
-          <div class="header">
-              <div class="box">C</div>
-              <div class="text"><strong>CERTIFIED: Cash available for the purpose</strong></div>
-          </div>
-          <div class="separator"></div>
-          <div class="content">
-              <div class="signature-section">
-                  <div>ZENAIDA G. ETURMA</div>
-                  <div class="signature-line">City Treasurer</div>
-              </div>
-              <div class="date-section">
-                  <input type="date" class="form-control">
-                  <div class="date-label">Date</div>
-              </div>
-          </div>
-      </div>
-      
-      <div class="container">
-          <div class="header">
-              <div class="box">D</div>
-              <div class="text"><strong>APPROVED FOR PAYMENT</strong></div>
-          </div>
-          <div class="separator"></div>
-          <div class="content">
-              <div class="signature-section">
-                  <div>HON. LORELIE G. PACQUIAO</div>
-                  <div>CITY MAYOR</div>
-              </div>
-              <div class="date-section">
-                  <input type="date" class="form-control">
-                  <div class="date-label">Date</div>
-              </div>
-          </div>
-      </div>
-      
-      <div class="container">
-          <div class="header">
-              <div class="box">E</div>
-              <div class="text"><strong> CERTIFIED: Each employee listed on the payroll has been paid</strong></div>
-          </div>
-          <div class="separator"></div>
-          <div class="content">
-              <div class="signature-section">
-                  <img class="signature-image" id="signatureE" alt="Signature">
-                  
-            <div><input name="name" id="name" class="styled-input"></div>
-            <div class="signature-line-after"></div>
-                  <div class="signature-line">Signature over Printed Name</div>
-                  <div>Disbursing Officer</div>
-              </div>
-              <input type="file" class="form-control" accept="image/*" onchange="uploadSignature(event, 'signatureE')">
-              <div class="date-section">
-                  <input type="date" class="form-control">
-                  <div class="date-label">Date</div>
-              </div>
-          </div>
-      </div>
-      
-      <div class="container">
-          <div class="header">
-              <div class="box">F</div>
-          </div>
-          <div class="separator"></div>
-          <div class="content">
-              <div><strong>CAFOA No.:</strong></div>
-              <input type="text" class="form-control" id="Fnumber">
-              <div class="date-section">
-                  <input type="date" class="form-control">
-                  <div class="date-label">Date</div>
-              </div>
-          </div>
-      </div>
-  </div>
+        <div class="container">
+            <div class="header">
+                <div class="box">A</div>
+                <div class="text"><strong>CERTIFIED: Services duly rendered as stated</strong></div>
+            </div>
+            <div class="separator"></div>
+            <div class="content">
+              <img class="signature-image" id="signatureA" alt="Signature">
+                <div class="signature-section">
+                  <input type="text" class="form-control" id="Aname">
+                    <div class="signature-line-after"></div>
+                    <div class="signature-line">Signature over Printed Name</div>
+                    <div style="margin-bottom: 20px;">Authorized Official</div>
+                </div>
+                <input style="margin-bottom: 20px;" type="file" class="form-control" accept="image/*" onchange="uploadSignature(event, 'signatureA')">
+                <div class="date-section">
+                    <input type="date" class="form-control">
+                    <div class="date-label">Date</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header">
+                <div class="box">B</div>
+                <div class="text"><strong>CERTIFIED: Supporting documents complete and proper</strong></div>
+            </div>
+            <div class="separator"></div>
+            <div class="content">
+                <div class="signature-section">
+                  <input type="text" class="form-control" id="Bname">
+                    <div class="signature-line">Acting CGDH II</div>
+                    <div style="margin-bottom: 20px;">Head of Accounting Division/Unit</div>
+                </div>
+                <div class="date-section">
+                    <input type="date" class="form-control">
+                    <div class="date-label">Date</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header">
+                <div class="box">C</div>
+                <div class="text"><strong>CERTIFIED: Cash available for the purpose</strong></div>
+            </div>
+            <div class="separator"></div>
+            <div class="content">
+                <div class="signature-section">
+                  <input type="text" class="form-control" id="Cname">
+                    <div  style="margin-bottom: 20px;" class="signature-line">City Treasurer</div>
+                </div>
+                <div class="date-section">
+                    <input type="date" class="form-control">
+                    <div class="date-label">Date</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header">
+                <div class="box">D</div>
+                <div class="text"><strong>APPROVED FOR PAYMENT</strong></div>
+            </div>
+            <div class="separator"></div>
+            <div class="content">
+                <div class="signature-section">
+                  <input type="text" class="form-control" id="Dname">
+                    <div style="margin-bottom: 20px;">CITY MAYOR</div>
+                </div>
+                <div class="date-section">
+                    <input type="date" class="form-control">
+                    <div class="date-label">Date</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header">
+                <div class="box">E</div>
+                <div class="text"><strong> CERTIFIED: Each employee listed on the payroll has been paid</strong></div>
+            </div>
+            <div class="separator"></div>
+            <div class="content">
+                <div class="signature-section">
+                    <img class="signature-image" id="signatureE" alt="Signature">
+                    
+              <input type="text" class="form-control" id="Ename">
+              <div class="signature-line-after"></div>
+                    <div  class="signature-line">Signature over Printed Name</div>
+                    <div style="margin-bottom: 20px;">Disbursing Officer</div>
+                </div>
+                <input style="margin-bottom: 20px;" type="file" class="form-control" accept="image/*" onchange="uploadSignature(event, 'signatureE')">
+                <div class="date-section">
+                    <input type="date" class="form-control">
+                    <div class="date-label">Date</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="header">
+                <div class="box">F</div>
+            </div>
+            <div class="separator"></div>
+            <div class="content">
+                <div style="margin-bottom: 20px;"><strong>CAFOA No.:</strong></div>
+                <input style="margin-bottom: 20px;" type="text" class="form-control" id="Fnumber">
+                <div class="date-section">
+                    <input type="date" class="form-control">
+                    <div class="date-label">Date</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
   <script>
       function uploadSignature(event, imageId) {
@@ -419,7 +391,7 @@
           <div class="container p-4 shadow-lg rounded bg-light" style="margin-top: 15px; width: 100%; max-width: 100%;">
               <div class="header">
                   <div class="box">G</div>
-                  <div class="text">CERTIFIED: Each employee listed on the payroll has been paid.</div>
+                  <div class="text">ACCOUNTING</div>
                   
               </div>
              <div class="button-row" >

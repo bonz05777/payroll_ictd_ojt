@@ -179,7 +179,7 @@ label {
     position: sticky;
     left: 0;
     background-color: #e3f2fd;
-    z-index: 1;
+    z-index: 3;
     border-right: 1px solid #ddd;
 }
 
@@ -226,13 +226,6 @@ label {
     background-color: rgb(245, 246, 246);
 }
 
-.freeze-column {
-    position: sticky;
-    left: 0;
-    background-color: white;
-    z-index: 3; /* Ensure sticky columns are on top */
-    border-right: 1px solid #000;
-}
 
 .freeze-row {
     position: sticky;
@@ -249,7 +242,7 @@ label {
 thead th {
     position: sticky;
     top: 0;
-    z-index: 10; /* Ensure header stays above other content */
+    z-index: 5; /* Ensure header stays above other content */
     background-color: #e3f2fd; /* Change this color to match your header */
     text-align: center;
   }
