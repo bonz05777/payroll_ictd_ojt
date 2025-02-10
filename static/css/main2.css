@@ -12,34 +12,61 @@ body {
 
 /* Header Styles */
 header {
-    background: linear-gradient(to right, #002c5c, #0056b3, #ffffff);
+    background: linear-gradient(
+        to right, 
+        #002c5c 50%,   /* Dark blue - 50% */
+        #3399ff 70%,   /* Sky blue - 30% */
+        #ffffff 90%   /* White - 20% */
+    );
     color: #fff;
-    padding: 0.5rem 0;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the content horizontally */
-    max-width: 1200px; /* Example max width */
-    margin: 0 auto; /* Center the container */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    min-height: 60px; /* Decreased height */
 }
 
 .logo {
-    max-height: 80px; /* Adjust as needed */
-    margin: 0 1rem; /* Space between logo and text */
+    max-height: 80px; /* Adjust for consistency */
 }
+
 .logo2 {
-    position: absolute;
-    right: 80px; /* Increase this value to move left */
-    height: 150px;
+    max-height: 120px; 
 }
 
 header h1 {
-    margin: 0; /* Remove default margin for h1 */
-    flex-grow: 1; /* Allow header to take up remaining space */
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    flex-grow: 1;
+    text-align: center;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto; /* Remove fixed height on small screens */
+    }
+
+    .logo, .logo2 {
+        max-height: 40px;
+        margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+}
+
 
 /* Main Content Styles */
 main {
@@ -52,13 +79,9 @@ main {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
+
 th, td {
-    border: 1px solid black;
+    border: 1px solid black !important;;
     padding: 8px;
     text-align: left;
 }
@@ -71,28 +94,23 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    position: relative; /* For absolute positioning of border image */
+    position: relative;
 }
 .date-container {
     display: flex;
-    align-items: center; /* Align items vertically */
-    gap: 10px; /* Space between elements */
-    flex-wrap: wrap; /* Wrap items if screen is too small */
+    align-items: center; 
+    gap: 10px; 
+    flex-wrap: wrap; 
 }
 
 .date-container h2 {
-    margin: 0; /* Remove default margin */
-}
-.date-container {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    gap: 10px; /* Space between elements */
-    flex-wrap: wrap; /* Wrap items if needed */
+    margin: 0;
 }
 
+
 .date-container h3 {
-    margin: 0; /* Remove default margin */
-    white-space: nowrap; /* Prevent wrapping */
+    margin: 0; 
+    white-space: nowrap; 
 }
 
 select, input {
@@ -101,7 +119,7 @@ select, input {
 }
 
 input[type="number"] {
-    width: 70px; /* Set fixed width for number inputs */
+    width: 70px;
 }
 .footer-container {
     max-width: 1200px;
@@ -115,7 +133,7 @@ input[type="number"] {
     margin-top: 30px;
     top: -20px;
     left: 0;
-    z-index: 1; /* Ensure border image appears above footer background */
+    z-index: 1;
 }
 
 footer p {
@@ -145,9 +163,11 @@ label {
 
 .container {
     max-width: 100%; /* Use full width */
-    width: 98%; /* Slight margin on sides */
+    width: 100%; /* Slight margin on sides */
     margin: 0 auto; /* Center the container */
 }
+
+
 
 
 .table-container {
@@ -188,18 +208,16 @@ label {
     
 }
 
-
 .table {
     min-width: 1500px;
     background-color: white;
-    border-collapse: separate;
     border-spacing: 0;
 }
 
 .table th,
 .table td {
     background-color: white;
-    border: 1px solid #000;
+    border: 1px solid #000 !important;
     border-width: .5px;
     text-align: center;
 }
@@ -212,7 +230,7 @@ label {
     position: sticky;
     left: 0;
     background-color: white;
-    z-index: 5; /* Ensure sticky columns are on top */
+    z-index: 3; /* Ensure sticky columns are on top */
     border-right: 1px solid #000;
 }
 
@@ -235,5 +253,165 @@ thead th {
     background-color: #e3f2fd; /* Change this color to match your header */
     text-align: center;
   }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1600px;
+    margin-top: 15px;
 
-  
+}
+.container {
+    border: 1px solid #dee2e6;
+    padding: 25px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.container:hover {
+    transform: translateY(-5px);
+}
+.header {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.header .box {
+    padding: 8px 15px;
+    font-weight: bold;
+    margin-right: 10px;
+    background-color: #1170b9;
+    color: white;
+    border-radius: 5px;
+}
+.separator {
+    border-top: 3px solid #000;
+    margin: 15px 0;
+}
+.signature-image {
+    display: none;
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    margin: 10px auto;
+    border: 1px solid #dee2e6;
+}
+.signature-line-after {
+border-top: 1px solid #000; 
+width: 70%; 
+margin: 5px auto;
+}
+
+.G-container {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left:auto;
+}
+.G-table-title {
+    font-weight: bold;
+    background-color: #1170b9;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: separate !important;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #dee2e6;
+    text-align: center;
+    padding: 8px;
+}
+.styled-input {
+border: 1px solid #ccc; 
+border-radius: 5px; 
+padding: 5px; 
+font-size: 14px; 
+margin-right: 30px ;
+margin-left: 20px;
+width: 200px;
+}
+.table-container {
+    position: relative; 
+    margin-bottom: 40px; 
+}
+
+.button-row {
+    width: 100%; 
+    display: flex; 
+    justify-content: left;
+}
+
+.button-row button {
+  background-color: #007bff; 
+  color: white; 
+  padding: 5px 10px; 
+  border: none; 
+  border-radius:5px;
+}
+/* Basic styling for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback
+color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer-section {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-size: 14px;
+    justify-content: center;
+}
+.footer-section div {
+    font-weight: bold;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.3) !important; /* Adjust transparency (0.3 = 30%) */
+}
+
