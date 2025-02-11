@@ -222,9 +222,13 @@ label {
     text-align: center;
 }
 
-.table-header th {
-    background-color: rgb(245, 246, 246);
+.table-header {
+    background-color: #f2f2f2; /* Example color, adjust as needed */
+    font-weight: bold; /* If you want the header text to be bold */
+    text-align: center; /* Center the text in header cells */
+    border: 1px solid #dee2e6;
 }
+
 
 
 .freeze-row {
@@ -407,4 +411,30 @@ color */
 .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.3) !important; /* Adjust transparency (0.3 = 30%) */
 }
+
+
+.editable-cell {
+    border: 1px solid #ccc;
+    padding: 5px;
+    min-width: 80px;
+    display: inline-block;
+    word-break: break-word;
+}
+
+.editable-cell-vertical {
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* Style for the editable content */
+.editable-content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-width: 100%;
+    font-size: 18px;
+    display: inline-block;
+    word-break: break-word;
+}
+
 
