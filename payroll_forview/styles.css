@@ -9,7 +9,6 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    border: 1px solid #000;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -53,7 +52,7 @@ th, td {
     overflow-wrap: break-word;
     text-align: center;
     padding: 4px;
-    font-size: 9px;
+    font-size: 11px;
 }
 .expandable td {
     white-space: normal;
@@ -107,36 +106,59 @@ th, td {
     padding: 15px;
     position: relative;
     min-height: 100px;
+    font-size: 12px;
+    
 }
 
 .label {
     position: absolute;
-    top: -10px;
-    left: -10px;
+    top: -6px;
+    left: -6px; 
     background: white;
     border: 2px solid black;
     padding: 4px 8px;
     font-weight: bold;
+    transform: translate(5px, 5px);
 }
-
-.name {
-    font-weight: bold;
-    text-decoration: underline;
+.title{
     display: block;
     margin-top: 5px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    text-align: center; 
+    width:100%;
 }
+.title2{
+    display: block;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    width:100%;
+}
+.name {
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+    text-align: center; 
+    width:100%;
+}
+
 
 .signature-line {
     display: block;
     border-top: 1px solid black;
-    width: 80%;
-    margin: 10px auto;
+    width: 50%;
     text-align: center;
+    position: relative;
+    margin: 0 auto; 
 }
-
 .date-line {
     text-align: right;
-    margin-top: 10px;
+    margin-top: 30px;
+}
+.date-line2{
+    text-align: center;
 }
 
 .amount {
@@ -161,22 +183,46 @@ th, td {
     border: 1px solid black;
     padding: 5px;
     text-align: center;
+    font-size: 12px;
 }
 
 .signature-section {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    align-items: center;
+    margin-top: 40px;
+
+}
+.prepared-by,
+.certified-correct {
+    text-align: left; 
+    width: 50%;
 }
 
-.prepared-by, .certified-correct {
+.signaturelineGrid {
+    display: block;
+    border-top: 1px solid black;
+    width: 55%;
+    height: 30px; 
+    margin: 30px auto 0 auto; 
     text-align: center;
+    position: relative;
 }
 
-.certified-correct .signature-line {
-    margin: 5px auto;
+.nameG, .positionG {
+    text-align: center; 
+    display: block;
+    margin: 0 auto; 
 }
 
+.nameG {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.positionG {
+    font-size: 12px;
+}
 @media print {
     body {
         padding: 0;
@@ -230,7 +276,7 @@ th, td {
     .details-group {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 20px; /* Adjust as needed */
+        column-gap: 20px; 
         width: 100%;
     }
     
@@ -255,6 +301,7 @@ th, td {
         width: 100%;
         border-collapse: collapse;
         page-break-inside: auto;
+        
     }
     thead {
         display: table-header-group;
@@ -266,7 +313,6 @@ th, td {
         page-break-inside: avoid;
     }
     th, td {
-        border: 1px solid black;
         padding: 4px;
         text-align: center;
         font-size: 8px;

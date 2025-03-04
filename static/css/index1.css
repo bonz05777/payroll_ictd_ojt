@@ -119,10 +119,14 @@ th, td {
 
 .name {
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
     display: block;
     margin-top: 5px;
+    text-align: center; /* Add this line */
+    width:100%;
 }
+
+
 
 .signature-line {
     display: block;
