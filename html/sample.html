@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="payroll-container">
+        <div class="payroll-header">
+            <img src='logo1.png' class="logo-left">
+            <div class="logo-right-container">
+                <img src='logo2.png' class="logo-right">
+            </div>
+            <h2>Payroll Request Form</h2>
+        </div>
+
+        <table id="payrollTable">
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>Manager</td>
+                <td>$5000</td>
+            </tr>
+        </table>
+
+        <button onclick="downloadPDF()">Download as PDF</button>
+        <button onclick="downloadExcel()">Download as Excel</button>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            let doc = new jsPDF();
+            doc.text("Payroll Request Form", 10, 10);
+            doc.autoTable({ html: "#payrollTable" });
+            doc.save("payroll.pdf");
+        }
+
+        function downloadExcel() {
+            let table = document.getElementById("payrollTable");
+            let wb = XLSX.utils.table_to_book(table, {sheet: "Payroll"});
+            XLSX.writeFile(wb, "payroll.xlsx");
+        }
+    </script>
+</body>
+</html>

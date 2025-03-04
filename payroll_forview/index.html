@@ -7,11 +7,18 @@
     <title>Payroll</title>
     <link rel="icon" type="image/png" href="proll.png">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
 </head>
 <body>
   <!-- First Page: -->
 <div class="page">
+    
         <div class="payroll-header">
+            <button id="download-pdf">Download as PDF</button>
+
+
             <img src='logo1.png' class="logo-left">
             <div class="logo-right-container">
                 <img src='logo2.png' class="logo-right">
@@ -19,6 +26,7 @@
             </div>
             <h3>PAYROLL</h3>
             <p>For the period of <span id='payroll-period'></span></p>
+            
         </div>
 
         <div class="details">
@@ -95,7 +103,7 @@
                 <td>pag2</td> 
                 <td>gsis_per</td> 
                 <td>gsis_gov</td> 
-                <td>ecc</td> 
+                <td>ecc</td>
                 <td>mpl</td> 
                 <td>housing</td> 
                 <td>lh</td> 
@@ -380,3 +388,72 @@
 </body>
 </html>
 
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    const downloadBtn = document.getElementById('download-pdf');
+
+    if (!downloadBtn) {
+        console.error("Download button not found!");
+        return;
+    }
+
+    downloadBtn.addEventListener('click', function() {
+        console.log("Download button clicked!");
+
+        const { jsPDF } = window.jspdf;
+        if (!jsPDF) {
+            alert("jsPDF library is not loaded!");
+            return;
+        }
+
+        let pdf = new jsPDF({
+            orientation: 'l',  // Landscape mode
+            unit: 'in',        
+            format: 'letter'   // Letter size (8.5 x 11 inches)
+        });
+
+        let pages = document.querySelectorAll('.page');
+
+        if (pages.length === 0) {
+            alert("No content found to export!");
+            return;
+        }
+
+        let margin = 0.3; // Set a narrow margin (0.3 inches)
+
+        // Hide the button without affecting layout
+        downloadBtn.style.visibility = "hidden"; 
+
+        let addPage = (index) => {
+            if (index >= pages.length) {
+                pdf.save('payroll-letter-landscape.pdf'); 
+
+                // Show the button again after saving
+                downloadBtn.style.visibility = "visible";  
+                return;
+            }
+
+            let element = pages[index];
+
+            html2canvas(element, { scale: 2, useCORS: true }).then(canvas => {
+                let imgData = canvas.toDataURL('image/png');
+
+                let pageWidth = 11 - (margin * 2);  // Adjust width for margin
+                let pageHeight = (canvas.height * pageWidth) / canvas.width; 
+
+                if (index > 0) pdf.addPage("letter", "l"); 
+                pdf.addImage(imgData, 'PNG', margin, margin, pageWidth, pageHeight);
+
+                addPage(index + 1);
+            }).catch(error => {
+                console.error("Error capturing page:", error);
+                alert("An error occurred while generating the PDF.");
+                downloadBtn.style.visibility = "visible"; // Restore button if error happens
+            });
+        };
+
+        addPage(0);
+    });
+});
+
+</script>
